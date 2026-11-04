@@ -1,8 +1,13 @@
+import ColoredBlock from "@/components/ColoredBlock/ColoredBlock";
+import Grid from "@/components/Grid/Grid";
+import PageSection from "@/components/PageSection/PageSection";
+import Reel from "@/components/Reel/Reel";
+
 export default async function IndexPage() {
   return (
     <>
-      <section className="section section-yellow">
-        <div className="container grid one-plus-two-columns large-gap">
+      <ColoredBlock as="section" backgroundColor="section-yellow">
+        <Grid columns="one-plus-two-columns" gap="large-gap">
           <div>
             <img
               src="https://images.unsplash.com/photo-1774070231417-4bf4d2025878?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
@@ -23,12 +28,11 @@ export default async function IndexPage() {
               Se våre kommende arrangementer
             </a>
           </div>
-        </div>
-      </section>
+        </Grid>
+      </ColoredBlock>
 
-      <section className="m-b-xl stack stack-large">
-        <h2 className="section-heading">Nyheter i butikken</h2>
-        <div className="reel">
+      <PageSection sectionHeading="Nyheter i butikken">
+        <Reel>
           <article className="box box-light-gray book-card">
             <img
               className="book-card-cover"
@@ -192,13 +196,17 @@ export default async function IndexPage() {
               Kjøp (379,-)
             </a>
           </article>
-        </div>
-      </section>
+        </Reel>
+      </PageSection>
 
-      <section className="m-b-xl stack stack-large">
-        <h2 className="section-heading">Hva de ansatte leser akkurat nå</h2>
-        <article className="section section-yellow">
-          <div className="container grid large-gap two-plus-one-columns recommendation-section product-on-right">
+      <PageSection sectionHeading="Hva de ansatte leser akkurat nå">
+        <ColoredBlock as="article" backgroundColor="section-yellow">
+          <Grid
+            gap="large-gap"
+            columns="two-plus-one-columns"
+            isRecommendationSection={true}
+            placeProduct="product-on-right"
+          >
             <div className="recommendation-section-text stack">
               <h3 className="section-subheading">
                 Wenche har nettopp lest Wallace the Brave for første gang!
@@ -253,9 +261,14 @@ export default async function IndexPage() {
                 Kjøp (399,-)
               </a>
             </div>
-          </div>
+          </Grid>
 
-          <div className="container grid one-plus-two-columns large-gap recommendation-section product-on-left">
+          <Grid
+            columns="one-plus-two-columns"
+            gap="large-gap"
+            isRecommendationSection={true}
+            placeProduct="product-on-left"
+          >
             <div className="recommendation-section-text stack">
               <h3 className="section-subheading">
                 Månedens lydbok for Christian er skrevet av Adam Kay
@@ -312,12 +325,11 @@ export default async function IndexPage() {
                 Kjøp (299,-)
               </a>
             </div>
-          </div>
-        </article>
-      </section>
+          </Grid>
+        </ColoredBlock>
+      </PageSection>
 
-      <section className="m-b-xl stack stack-large">
-        <h2 className="section-heading">#BookTok</h2>
+      <PageSection sectionHeading="#BookTok">
         <div className="reel">
           <article className="box box-light-gray book-card">
             <img
@@ -404,10 +416,9 @@ export default async function IndexPage() {
             </a>
           </article>
         </div>
-      </section>
+      </PageSection>
 
-      <section className="m-b-xl stack stack-large">
-        <h2 className="section-heading">Lagertømming!</h2>
+      <PageSection sectionHeading="Lagertømming!">
         <div className="reel">
           <article className="box box-light-gray book-card">
             <img
@@ -493,12 +504,11 @@ export default async function IndexPage() {
             </a>
           </article>
         </div>
-      </section>
+      </PageSection>
 
-      <section className="m-b-xl stack stack-large">
-        <h2 className="section-heading">Våre ansatte</h2>
-        <article className="section section-green">
-          <div className="container grid three-columns">
+      <PageSection sectionHeading="Våre ansatte">
+        <ColoredBlock as="article" backgroundColor="section-green">
+          <Grid columns="three-columns">
             <div className="stack employee-card">
               <img
                 className="employee-card-photo"
@@ -550,12 +560,12 @@ export default async function IndexPage() {
                 krimromaner, og har mange gode tips om klassikere du bør lese!
               </p>
             </div>
-          </div>
-        </article>
-      </section>
+          </Grid>
+        </ColoredBlock>
+      </PageSection>
 
-      <section className="m-b-xl stack stack-large">
-        <div className="container grid two-plus-one-columns">
+      <PageSection>
+        <Grid columns="two-plus-one-columns">
           <article className="stack">
             <h2 className="section-heading">
               Hva skjer på BookDragons i høst?
@@ -641,8 +651,8 @@ export default async function IndexPage() {
               </li>
             </ul>
           </aside>
-        </div>
-      </section>
+        </Grid>
+      </PageSection>
     </>
   );
 }
